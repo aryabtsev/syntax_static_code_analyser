@@ -1,8 +1,9 @@
 import ast
 
-import term_classifier
+from term_classifier import TermClassifier
 
-class AstTreeParser():
+
+class AstTreeParser(TermClassifier):
 
     def get_all_names(self, tree):
 
@@ -10,7 +11,7 @@ class AstTreeParser():
 
     def get_verbs_from_function_name(self, function_name):
 
-        return [word for word in function_name.split('_') if term_classifier.is_verb(word)]
+        return [word for word in function_name.split('_') if self.is_verb(word)]
 
     def split_snake_case_name_to_words(self, name):
 

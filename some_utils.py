@@ -6,6 +6,7 @@ parser.add_argument('--size', '-s')
 parser.add_argument('--term', '-t')
 namespace = parser.parse_args()
 
+
 def flat(list_with_tuples):
     """ [(1,2), (3,4)] -> [1, 2, 3, 4]"""
 

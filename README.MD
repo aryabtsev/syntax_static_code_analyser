@@ -2,6 +2,6 @@
 
 ### Quick start
 ````bash
-git clone 
+git clone https://github.com/aryabtsev/syntax_static_code_analyser.git
 pip install -r requirements.txt
 ````
