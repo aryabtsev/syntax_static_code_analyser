@@ -40,28 +40,3 @@ class PrepareCode():
         print('total %s files' % len(pathways))
 
         return pathways
-
-
-    def generate_trees(self, pathways, with_filenames=False, with_file_content=False):
-
-        trees = []
-
-        for filename in pathways:
-            with open(filename, 'r', encoding='utf-8') as attempt_handler:
-                main_file_content = attempt_handler.read()
-
-            try:
-                tree = ast.parse(main_file_content)
-            except SyntaxError as e:
-                print(e)
-                tree = None
-
-            if with_filenames:
-                if with_file_content:
-                    trees.append((filename, main_file_content, tree))
-                else:
-                    trees.append((filename, tree))
-            else:
-                trees.append(tree)
-
-        return trees
